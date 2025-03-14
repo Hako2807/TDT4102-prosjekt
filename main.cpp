@@ -1,20 +1,14 @@
-//
-// This is example code from Chapter 2.2 "The classic first program" of
-// "Programming -- Principles and Practice Using C++" by Bjarne Stroustrup
-//
-// This program outputs the message "Hello, World!" to the monitor
+#include <include/matrix.h>
 
-#include "std_lib_facilities.h"
-
-//------------------------------------------------------------------------------'
-
-// C++ programs start by executing the function main
 int main() {
-    // Show a nice message in the Terminal window
-    cout << "Hello, World!" << endl;
-
-    // This lets the operating system (Windows, Mac, Linux, etc.) know that the program
-    // did not encounter any errors
+    ColorValues c;
+    c.redChannel = 10;
+    c.greenChannel = 200;
+    c.blueChannel = 155;
+    c.alphaChannel = 34;
+    Matrix<ColorValues, 10, 10> m {};
+    m.setVal(4, 3, c);
+    std::cout << m << std::endl;
     return 0;
 }
 
