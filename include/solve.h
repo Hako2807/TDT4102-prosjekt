@@ -13,7 +13,7 @@ class Solver {
         Solver(std::vector<Shape> shapes);
         void step();
         void try_shape_at(const Shape& shape, const Point& point);
-        float get_score();
+        float get_score(const Shape& shape, const Point& point);
 
 };
 

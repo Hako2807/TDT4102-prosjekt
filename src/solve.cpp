@@ -4,6 +4,9 @@ Solver::Solver(std::vector<Shape> _shapes) {
     this->shapes = _shapes;
 }
 
+float get_score(Shape) {
+    
+}
 
 
 void Solver::try_shape_at(const Shape& shape, const Point& point) {
