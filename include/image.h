@@ -11,8 +11,12 @@ class Image {
         Matrix<T, Rows, Cols> pixels;
     public:
         Image();
-        T getPixel(int x, int y) const;
-        void setPixel(T val, int x, int y);
+        T getPixel(int x, int y) const {
+            return pixels.at(x).at(y);
+        }
+        void setPixel(int x, int y, T val) {
+            pixels.setVal(x, y, val);
+        }
 };
 
 
