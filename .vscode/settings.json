@@ -1,4 +1,5 @@
 {
+    "terminal.integrated.fontFamily": "MesloLGS NF",
     "tdt4102.isProjectFolder": true,
     "cmake.configureOnOpen": false,
     "cmake.autoSelectActiveFolder": false,
