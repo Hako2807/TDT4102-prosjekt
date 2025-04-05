@@ -20,7 +20,7 @@ class Matrix {
         Matrix<T, Rows, Cols>(){
             for (int i = 0; i < Rows; i++){
                 for (int j = 0; j < Cols; j++) {
-                    matrix.at(i).at(j) = T(1, 2, 3, 4);
+                    matrix.at(i).at(j) = T(1, 68, 3, 255);
                 }
             }
         };

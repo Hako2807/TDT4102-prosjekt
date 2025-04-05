@@ -10,6 +10,10 @@ Vi må finne en algortime for å finne hvilken form vi skal plassere hvor og nå
 - Vindu
 - Lese form fra fil
 - Lagre bilde til fil
+    - Bilder skal være på denne formen:
+        - Rows Cols
+        - Så: Rows * Cols linjer med
+        - R G B A
 - Lese oppbygd bilde fra fil steg for steg
 - Algoritme for å bestemme hvilken form som skal med
     - Måte å sammenligne farger

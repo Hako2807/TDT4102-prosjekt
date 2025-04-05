@@ -23,7 +23,7 @@ else
   compiler_flags = ['-Wconversion', '-fdiagnostics-color=always', '-Werror=return-type', '-fcolor-diagnostics', '-fansi-escape-codes']
 endif
 
-src = []
+src = ['src/image_file.cpp']
 
 exe = executable(
   'program',
