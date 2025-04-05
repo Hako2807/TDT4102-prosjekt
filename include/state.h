@@ -6,7 +6,7 @@
 template<int Rows, int Columns>
 class State {
 private:
-    Image<Rows, Columns> board;
+    Image<Rows, Columns> pixels;
     int score;
 public:
     State<Rows, Columns>() {}
@@ -16,6 +16,9 @@ public:
     }
     void updateScore(int n) {
         score += n;
+    }
+    TDT4102::Color getColor(int i, int j) const {
+        return pixels.getPixel(i, j);
     }
 };
 
