@@ -1,7 +1,7 @@
 #ifndef SHAPE
 #define SHAPE
 
-#include <image.h>
+#include <state.h>
 
 struct Point {
     int x;
@@ -13,7 +13,7 @@ class Shape {
        
     public:
         Shape();
-        virtual void place(Image<double, 50, 50>& img, const Point topLeft, ColorValues color); // Make these to template
+        virtual void place(State<double, 50, 50>& img, const Point topLeft, ColorValues color); // Make these to template
         virtual std::vector<Point> get_locations();
 
 };

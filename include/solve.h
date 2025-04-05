@@ -8,7 +8,7 @@ class Solver {
     private:
         std::vector<Shape> shapes;
         std::unordered_map<Shape, std::pair<Point, float>> scores;
-        Image<int, 50, 50> image;
+        State<int, 50, 50> state;
     public:
         Solver(std::vector<Shape> shapes);
         void step();
