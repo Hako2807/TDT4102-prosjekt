@@ -5,7 +5,6 @@
 #include <include/matrix.h>
 
 
-
 template<int Rows, int Cols>
 class Image : public Matrix<TDT4102::Color, Rows, Cols> {
     private:

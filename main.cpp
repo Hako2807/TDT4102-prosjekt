@@ -12,6 +12,7 @@ int main() {
         std::cout << "2) Test å skriv piksler til fil" << std::endl;
         std::cout << "3) Test å les bilde fra fil" << std::endl;
         std::cout << "4) Test AnimationWindow" << std::endl;
+        std::cout << "5) Test få piksler fra utenom bilde" << std::endl;
         std::cout << "----------------------------------------" << std::endl;
         std::cout << "Velg et program (0-5): ";
         std::cin >> valg;
@@ -41,7 +42,12 @@ int main() {
             win.wait_for_close();
         } else if (valg == 5) {
             GetPixelsFromImageFile<400, 400> handle;
-            handle.getPixels();
+            const char* path = "assets/Bart-iver.png";
+            handle.getPixels(path);
+            State<400, 400> state = handle.returnState();
+            Window<400, 400> win {};
+            win.drawImage(state);
+            win.wait_for_close();
         }
     }while (valg != 0);
     

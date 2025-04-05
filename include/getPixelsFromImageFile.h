@@ -9,38 +9,32 @@ template<int Rows, int Columns>
 class GetPixelsFromImageFile {
 private:
     State<Rows, Columns> goal_image;
-     
-public:
-    GetPixelsFromImageFile() {}
-
-    State<Rows, Columns> getGoalImage() {}
 
     SDL_Color GetPixelColor(const SDL_Surface* pSurface, const int X, const int Y)
     {
-        // Bytes per pixel
+        // Hippity hoppity this code is now my property https://discourse.libsdl.org/t/how-do-i-get-the-rgb-values-of-a-pixel-from-a-given-surface-and-x-and-y-coordinates-in-sdl2/26915/2  
         const Uint8 Bpp = pSurface->format->BytesPerPixel;
 
-        /*
-        Retrieve the address to a specific pixel
-        pSurface->pixels	= an array containing the SDL_Surface' pixels
-        pSurface->pitch		= the length of a row of pixels (in bytes)
-        X and Y				= the offset on where on the image to retrieve the pixel, (0, 0) is in the upper left corner of the image
-        */
         Uint8* pPixel = (Uint8*)pSurface->pixels + Y * pSurface->pitch + X * Bpp;
 
         Uint32 PixelData = *(Uint32*)pPixel;
 
         SDL_Color Color = {0x00, 0x00, 0x00, SDL_ALPHA_OPAQUE};
 
-        // Retrieve the RGB values of the specific pixel
         SDL_GetRGB(PixelData, pSurface->format, &Color.r, &Color.g, &Color.b);
 
         return Color;
     }
+public:
+    GetPixelsFromImageFile() {}
 
-    void getPixels()
+    State<Rows, Columns> returnState() {
+        return goal_image;
+    }
+
+    void getPixels(const char*& path)
     {
-        SDL_Surface* pSurface = IMG_Load("assets/Bart-iver.png");
+        SDL_Surface* pSurface = IMG_Load(path);
         int img_heigth = 400;
         int img_width = 400; 
 
