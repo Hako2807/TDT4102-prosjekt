@@ -6,10 +6,10 @@
 #include<ostream>
 
 struct ColorValues {
-    u_char redChannel;
-    u_char greenChannel;
-    u_char blueChannel;
-    u_char alphaChannel;
+    int redChannel;
+    int greenChannel;
+    int blueChannel;
+    int alphaChannel;
 };
 
 template<typename T, int Rows, int Cols>
@@ -40,7 +40,7 @@ class Matrix {
 
 };
 template<typename T, int Rows, int Cols>
-std::ostream& operator<<(std::ostream& os, const Matrix<T, Rows, Cols>& m) {
+inline std::ostream& operator<<(std::ostream& os, const Matrix<T, Rows, Cols>& m) {
     for (int i = 0; i < m.getNumRows(); i++){
         for (int j = 0; j < m.getNumCols(); j++) {
             std::cout << m.getVal(i, j) << " ";
@@ -51,7 +51,7 @@ std::ostream& operator<<(std::ostream& os, const Matrix<T, Rows, Cols>& m) {
 }
 
 
-std::ostream& operator<<(std::ostream& os, const ColorValues& c) {
+inline std::ostream& operator<<(std::ostream& os, const ColorValues& c) {
     std::cout << "(" << c.redChannel << ", " << c.greenChannel << ", " << c.blueChannel << ", " << c.alphaChannel << ")";
     return os;
 }

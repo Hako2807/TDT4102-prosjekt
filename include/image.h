@@ -5,7 +5,7 @@
 #include <include/matrix.h>
 
 
-TDT4102::Color transformToColor(ColorValues color) {
+inline TDT4102::Color transformToColor(ColorValues color) {
     TDT4102::Color transformed;
     transformed.redChannel = color.redChannel;
     transformed.greenChannel = color.greenChannel;
