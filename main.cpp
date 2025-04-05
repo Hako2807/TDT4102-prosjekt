@@ -2,6 +2,7 @@
 #include <include/image_file.h>
 #include <include/getPixelsFromImageFile.h>
 #include <include/window.h>
+#include <include/rectangleShape.h>
 
 int main() {
     int valg = 0;
@@ -13,8 +14,9 @@ int main() {
         std::cout << "3) Test å les bilde fra fil" << std::endl;
         std::cout << "4) Test AnimationWindow" << std::endl;
         std::cout << "5) Test få piksler fra utenom bilde" << std::endl;
+        std::cout << "6) Test shapes" << std::endl;
         std::cout << "----------------------------------------" << std::endl;
-        std::cout << "Velg et program (0-5): ";
+        std::cout << "Velg et program (0-10): ";
         std::cin >> valg;
 
         if (valg == 1) {
@@ -29,7 +31,7 @@ int main() {
                 std::cin >> choice;
 
                 if (choice == 1) {
-                    
+
                 } else if (choice == 2) {
 
                 }
@@ -58,6 +60,15 @@ int main() {
             State<400, 400> state = handle.returnState();
             Window<400, 400> win {};
             win.drawImage(state);
+            win.wait_for_close();
+        } else if (valg == 6) {
+            Window<50, 50> win {};
+            State<50, 50> img {};
+            RectangleShape rect {20, 20};
+            img = rect.place(img, {5, 5}, TDT4102::Color::blue);
+            img = rect.place(img, {10, 15}, TDT4102::Color::bisque);
+            State<50,50> s {};
+            win.drawImage(img);
             win.wait_for_close();
         }
 
