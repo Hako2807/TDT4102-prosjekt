@@ -13,7 +13,7 @@ class Shape {
        
     public:
         Shape();
-        virtual void place(Image<double, 50, 50>& img, const Point topLeft, ColorValues color); // Make these to template
+        virtual void place(Image<50, 50>& img, const Point topLeft, ColorValues color); // Make these to template
         virtual std::vector<Point> get_locations();
 
 };
