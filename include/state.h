@@ -20,6 +20,9 @@ public:
     TDT4102::Color getColor(int i, int j) const {
         return pixels.getPixel(i, j);
     }
+    void setColor(int i, int j, TDT4102::Color c) {
+        pixels.setPixel(i, j, c);
+    }
 };
 
 #endif
