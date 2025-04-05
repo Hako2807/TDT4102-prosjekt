@@ -2,15 +2,15 @@
 #define IMAGE
 
 #include <AnimationWindow.h>
-#include <matrix.h>
+#include <include/matrix.h>
 
 
 template<typename T, int Rows, int Cols>
-class Image {
+class Image : public Matrix<T, Rows, Cols>{
     private:
         Matrix<T, Rows, Cols> pixels;
     public:
-        Image();
+        Image() {}
         T getPixel(int x, int y) const {
             return pixels.at(x).at(y);
         }
