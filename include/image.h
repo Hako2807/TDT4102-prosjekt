@@ -5,30 +5,31 @@
 #include <include/matrix.h>
 
 
-TDT4102::Color transformToColor(ColorValues color) {
-    TDT4102::Color transformed;
-    transformed.redChannel = color.redChannel;
-    transformed.greenChannel = color.greenChannel;
-    transformed.blueChannel = color.blueChannel;
-    transformed.alphaChannel = color.alphaChannel;
-
-    return transformed;
-}
 
 template<int Rows, int Cols>
-class Image : public Matrix<ColorValues, Rows, Cols> {
+class Image : public Matrix<TDT4102::Color, Rows, Cols> {
     private:
-        Matrix<ColorValues, Rows, Cols> pixels;
+        Matrix<TDT4102::Color, Rows, Cols> pixels;
     public:
         Image<Rows, Cols>() {}
-        ColorValues getPixel(int x, int y) const {
-            return pixels.getVal(x, y);
+        TDT4102::Color getPixel(int i, int j) const {
+            return pixels.getVal(i, j);
         }
-        void setPixel(int x, int y, ColorValues c) {
-            pixels.setVal(x, y, c);
+        void setPixel(int i, int j, TDT4102::Color c) {
+            pixels.setVal(i, j, c);
         }
 
 };
+template<int Rows, int Cols>
+inline std::ostream& operator<<(std::ostream& os, const Image<Rows, Cols>& m) {
+    for (int i = 0; i < m.getNumRows(); i++){
+        for (int j = 0; j < m.getNumCols(); j++) {
+            std::cout << m.getPixel(i, j) << " ";
+        }
+        std::cout << std::endl;
+    }
+    return os;
+}
 
 
 #endif

@@ -13,7 +13,7 @@ class ImageFile {
     
     public:
         ImageFile(const std::string fileName);
-        void write(Image<50, 50> img) const;
+        void write(const Image<50, 50>& img) const;
         Image<50, 50> read();
 };
 

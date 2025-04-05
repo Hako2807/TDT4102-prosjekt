@@ -4,13 +4,8 @@
 #include<array>
 #include<iostream>
 #include<ostream>
+#include <AnimationWindow.h>
 
-struct ColorValues {
-    u_char redChannel;
-    u_char greenChannel;
-    u_char blueChannel;
-    u_char alphaChannel;
-};
 
 template<typename T, int Rows, int Cols>
 class Matrix {
@@ -39,19 +34,10 @@ class Matrix {
         }
 
 };
-template<typename T, int Rows, int Cols>
-std::ostream& operator<<(std::ostream& os, const Matrix<T, Rows, Cols>& m) {
-    for (int i = 0; i < m.getNumRows(); i++){
-        for (int j = 0; j < m.getNumCols(); j++) {
-            std::cout << m.getVal(i, j) << " ";
-        }
-        std::cout << std::endl;
-    }
-    return os;
-}
 
 
-std::ostream& operator<<(std::ostream& os, const ColorValues& c) {
+
+inline std::ostream& operator<<(std::ostream& os, const TDT4102::Color& c) {
     std::cout << "(" << c.redChannel << ", " << c.greenChannel << ", " << c.blueChannel << ", " << c.alphaChannel << ")";
     return os;
 }
