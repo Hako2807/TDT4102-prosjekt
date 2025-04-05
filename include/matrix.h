@@ -1,5 +1,6 @@
 #ifndef MATRIX
 #define MATRIX
+
 #include<array>
 #include<iostream>
 #include<ostream>

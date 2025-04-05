@@ -16,11 +16,11 @@ TDT4102::Color transformToColor(ColorValues color) {
 }
 
 template<int Rows, int Cols>
-class Image : public Matrix<ColorValues, Rows, Cols>,  public TDT4102::AnimationWindow {
+class Image : public Matrix<ColorValues, Rows, Cols> {
     private:
         Matrix<ColorValues, Rows, Cols> pixels;
     public:
-        Image() : TDT4102::AnimationWindow {100, 100, Rows, Cols, "HALLO!"} {}
+        Image<Rows, Cols>() {}
         ColorValues getPixel(int x, int y) const {
             return pixels.getVal(x, y);
         }
@@ -28,14 +28,6 @@ class Image : public Matrix<ColorValues, Rows, Cols>,  public TDT4102::Animation
             pixels.setVal(x, y, c);
         }
 
-        void drawScreen() {
-            for (int i = 0; i < Rows; i++) {
-                for (int j = 0; j < Cols; j++) {
-                    TDT4102::Color c = transformToColor(getPixel(i, j));
-                    this->draw_rectangle({i, j}, 1, 1, c);
-                }
-            }
-        }
 };
 
 
