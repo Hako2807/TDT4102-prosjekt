@@ -30,4 +30,23 @@ Vi må finne en algortime for å finne hvilken form vi skal plassere hvor og nå
     - Kan lage en klasse for hver form som hver har disse medlemsfunksjonene:
         - placeShape(topleft, color)
 
+## Flow
+Først spørre hva man vil gjøre (Helst gjennom GUI):
+- Se tidligere bilde
+    - Velge path
+    - Lese inn fil av shapes brukt og vise hvordan det ser ut etter hver shape.
+- Generere nytt bilde 
+    - Velge path
+    - Start algorithm
+        - Choose a shape and color
+            - Start with large size, loop through possible positions, get score
+            - Find best score
+            - place it (or do it with all possible colors and shapes)
+                - Show new frame
+        - Reduce size of shapes and repeat untill the picture is close enough to the given picture
+        - Save each shape used to file
+            - structure on file:
+                - Num_shapes
+                - Shape_id top_left_x top_left_y width height (num_shapes times)
+
 

@@ -8,7 +8,7 @@ int main() {
     do{
         std::cout << "------------------MENY------------------" << std::endl;
         std::cout << "0) Avslutt" << std::endl;
-        std::cout << "1) Test å tegne" << std::endl;
+        std::cout << "1) Run programmet" << std::endl;
         std::cout << "2) Test å skriv piksler til fil" << std::endl;
         std::cout << "3) Test å les bilde fra fil" << std::endl;
         std::cout << "4) Test AnimationWindow" << std::endl;
@@ -18,13 +18,24 @@ int main() {
         std::cin >> valg;
 
         if (valg == 1) {
-            TDT4102::Color c;
-            c.redChannel = 10;
-            c.greenChannel = 200;
-            c.blueChannel = 155;
-            c.alphaChannel = 34;
-            Image<100, 100> m {};
-            m.setVal(4, 3, c);
+            std::cout << "Welcome to this project!!!!!!" << std::endl;
+            int choice;
+            do {
+                std::cout << "Choose what to do: " << std::endl;
+                std::cout << "      0) Exit :(" << std::endl;
+                std::cout << "      1) Show previous image" << std::endl;
+                std::cout << "      2) Generate new image" << std::endl;
+                std::cout << "Choise: ";
+                std::cin >> choice;
+
+                if (choice == 1) {
+                    
+                } else if (choice == 2) {
+
+                }
+
+            } while (choice != 0);
+
             
         } else if (valg == 2) {
             Image<50, 50> m;
@@ -49,6 +60,7 @@ int main() {
             win.drawImage(state);
             win.wait_for_close();
         }
+
     }while (valg != 0);
     
     return 0;
