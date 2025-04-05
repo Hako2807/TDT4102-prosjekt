@@ -1,4 +1,4 @@
-#include <include/matrix.h>
+#include <include/image.h>
 
 int main() {
     ColorValues c;
@@ -6,9 +6,11 @@ int main() {
     c.greenChannel = 200;
     c.blueChannel = 155;
     c.alphaChannel = 34;
-    Matrix<ColorValues, 10, 10> m {};
+    Image<100, 100> m {};
     m.setVal(4, 3, c);
     std::cout << m << std::endl;
+    m.drawScreen();
+    m.wait_for_close();
     return 0;
 }
 

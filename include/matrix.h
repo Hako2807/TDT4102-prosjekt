@@ -5,10 +5,10 @@
 #include<ostream>
 
 struct ColorValues {
-    int redChannel;
-    int greenChannel;
-    int blueChannel;
-    int alphaChannel;
+    u_char redChannel;
+    u_char greenChannel;
+    u_char blueChannel;
+    u_char alphaChannel;
 };
 
 template<typename T, int Rows, int Cols>

@@ -4,7 +4,7 @@ Solver::Solver(std::vector<Shape> _shapes) {
     this->shapes = _shapes;
 }
 
-float get_score(Shape) {
+float get_score(const Shape& shape, const Point& point) {
     
 }
 
