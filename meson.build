@@ -26,7 +26,7 @@ endif
 
 exe = executable(
   'program',
-'main.cpp',
+'main.cpp', 'src/image_file.cpp',
   dependencies : [animationwindow_dep, sdl2_dep, std_lib_facilities_dep],
   cpp_args : compiler_flags
 )
