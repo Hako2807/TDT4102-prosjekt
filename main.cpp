@@ -1,6 +1,6 @@
 #include <include/image.h>
 #include <include/image_file.h>
-#include <include/getPixelsFromImage.h>
+#include <include/getPixelsFromImageFile.h>
 
 int main() {
     int valg = 0;
@@ -23,6 +23,8 @@ int main() {
             m.setVal(4, 3, c);
             std::cout << m << std::endl;
         } else if (valg == 2) {
+            GetPixelsFromImageFile<400, 400> handle;
+            handle.getPixels();
         }
     }while (valg != 0);
     

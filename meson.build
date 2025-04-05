@@ -23,11 +23,9 @@ else
   compiler_flags = ['-Wconversion', '-fdiagnostics-color=always', '-Werror=return-type', '-fcolor-diagnostics', '-fansi-escape-codes']
 endif
 
-src = ['src/image_file.cpp']
 
 exe = executable(
   'program',
-  src,
 'main.cpp',
   dependencies : [animationwindow_dep, sdl2_dep, std_lib_facilities_dep],
   cpp_args : compiler_flags

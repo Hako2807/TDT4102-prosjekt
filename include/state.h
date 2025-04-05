@@ -17,6 +17,12 @@ public:
     void updateScore(int n) {
         score += n;
     }
+    ColorValues getPixel(int x, int y) const {
+        return board.getPixel(x, y);
+    }
+    void setPixel(int x, int y, ColorValues c) {
+        board.setPixel(x, y, c);
+    }
 };
 
 #endif
