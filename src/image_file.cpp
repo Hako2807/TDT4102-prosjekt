@@ -3,7 +3,7 @@
 ImageFile::ImageFile(const std::string fileName) : fileName {fileName} {
 }
 
-void ImageFile::write(const Image<50, 50>& img) const {
+void ImageFile::write(const Image& img) const {
     std::ofstream fileStream  {fileName};
     fileStream << 50 << " " << 50 << std::endl;
     TDT4102::Color c;
@@ -16,12 +16,13 @@ void ImageFile::write(const Image<50, 50>& img) const {
     fileStream.close();
 }
 
-Image<50, 50> ImageFile::read() {
+Image ImageFile::read() {
     std::ifstream fileStream {fileName};
     int rows, cols;
-    Image<50, 50> img;
+    
     TDT4102::Color c;
     fileStream >> rows >> cols;
+    Image img {rows, cols};
     for (int i = 0; i < rows; i ++) {
         for (int j = 0; j < cols; j ++) {
             fileStream >> c.redChannel >> c.greenChannel >> c.blueChannel >> c.alphaChannel; 

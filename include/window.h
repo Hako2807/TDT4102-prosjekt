@@ -6,24 +6,14 @@
 #include <include/state.h>
 
 
-template<int rows, int cols>
 class Window : public TDT4102::AnimationWindow {
 private:
     int _rows;
     int _cols;
 public:
-    Window() : TDT4102::AnimationWindow {100, 100, rows, cols, "Prosjekt TDT4102"}{
-        this->_rows = rows;
-        this->_cols = cols;
-    };
+    Window(int rows, int cols);
 
-    void drawImage(const State<rows, cols>& state){
-        for (int i = 0; i < this->_rows; i++) {
-            for (int j = 0; j < this->_cols; j++) {
-                this->draw_rectangle({i,j}, 1, 1, state.getColor(i, j));
-            }
-        }
-    }
+    void drawImage(const State& state);
 };
 
-#endif WINDOW
+#endif

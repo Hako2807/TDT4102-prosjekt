@@ -5,30 +5,28 @@
 #include <include/matrix.h>
 
 
-template<int Rows, int Cols>
-class Image : public Matrix<TDT4102::Color, Rows, Cols> {
+class Image {
     private:
-        Matrix<TDT4102::Color, Rows, Cols> pixels;
+        const int _rows, _cols;
+        TDT4102::Color** pixels;
     public:
-        Image<Rows, Cols>() {}
-        TDT4102::Color getPixel(int i, int j) const {
-            return pixels.getVal(i, j);
-        }
-        void setPixel(int i, int j, TDT4102::Color c) {
-            pixels.setVal(i, j, c);
-        }
+        Image(int rows, int cols);
+        ~Image();
+
+        TDT4102::Color* operator[](int i) const;
+
+        TDT4102::Color getPixel(int i, int j) const;
+
+        void setPixel(int i, int j, TDT4102::Color c);
+
+        const int getRows() const; 
+        const int getCols() const; 
+
+        Image& operator=(Image other);
 
 };
-template<int Rows, int Cols>
-inline std::ostream& operator<<(std::ostream& os, const Image<Rows, Cols>& m) {
-    for (int i = 0; i < m.getNumRows(); i++){
-        for (int j = 0; j < m.getNumCols(); j++) {
-            std::cout << m.getPixel(i, j) << " ";
-        }
-        std::cout << std::endl;
-    }
-    return os;
-}
+
+std::ostream& operator<<(std::ostream& os, const Image& m);
 
 
 #endif

@@ -5,10 +5,10 @@
 #include <SDL_image.h>
 #include <include/state.h>
 
-template<int Rows, int Columns>
+template<int Rows, int Cols>
 class GetPixelsFromImageFile {
 private:
-    State<Rows, Columns> goal_image;
+    State goal_image;
 
     SDL_Color GetPixelColor(const SDL_Surface* pSurface, const int X, const int Y)
     {
@@ -26,9 +26,9 @@ private:
         return Color;
     }
 public:
-    GetPixelsFromImageFile() {}
+    GetPixelsFromImageFile() : goal_image {Rows, Cols} {}
 
-    State<Rows, Columns> returnState() {
+    State returnState() {
         return goal_image;
     }
 
@@ -42,7 +42,7 @@ public:
             for (int j = 0; j < img_width; j++) {
                 const SDL_Color colorval = GetPixelColor(pSurface, j, i);
 
-                goal_image.setColor(j, i, TDT4102::Color{colorval.r, colorval.b, colorval.g, colorval.a});
+                goal_image.setPixel(j, i, TDT4102::Color{colorval.r, colorval.b, colorval.g, colorval.a});
             }
         }
         

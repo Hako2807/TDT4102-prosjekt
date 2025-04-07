@@ -4,7 +4,7 @@ Shape::Shape() {
 
 }
 
-State<50, 50> Shape::place(State<50, 50>& img, const Point& topLeft, const TDT4102::Color& color) {
+State Shape::place(State& img, const Point& topLeft, const TDT4102::Color& color) {
     std::cout << "Oh no this should not be called!" << std::endl;
     return img;
 }

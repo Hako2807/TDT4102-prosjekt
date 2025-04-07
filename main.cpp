@@ -3,6 +3,7 @@
 #include <include/getPixelsFromImageFile.h>
 #include <include/window.h>
 #include <include/rectangleShape.h>
+#include <include/circleShape.h>
 
 int main() {
     int valg = 0;
@@ -40,34 +41,37 @@ int main() {
 
             
         } else if (valg == 2) {
-            Image<50, 50> m;
+            Image m {50, 50};
             ImageFile file {"data/img2.txt"};
             file.write(m);
         } else if (valg == 3) {
             ImageFile file {"data/img2"};
-            Image<50, 50> img = file.read();
+            Image img = file.read();
             std::cout << "PRINTING OUT IMAGE FROM FILE!!" << std::endl;
             std::cout << img << std::endl;
         } else if (valg == 4) {
-            Window<50, 50> win {};
-            State<50,50> s {};
+            Window win {50, 50};
+            State s {50, 50};
             win.drawImage(s);
             win.wait_for_close();
         } else if (valg == 5) {
             GetPixelsFromImageFile<400, 400> handle;
             const char* path = "assets/Bart-iver.png";
             handle.getPixels(path);
-            State<400, 400> state = handle.returnState();
-            Window<400, 400> win {};
+            State state = handle.returnState();
+            Window win {400, 400};
             win.drawImage(state);
             win.wait_for_close();
         } else if (valg == 6) {
-            Window<50, 50> win {};
-            State<50, 50> img {};
+            Window win {200, 200};
+            State img {200, 200};
             RectangleShape rect {20, 20};
+            CircleShape circ {25};
             img = rect.place(img, {5, 5}, TDT4102::Color::blue);
             img = rect.place(img, {10, 15}, TDT4102::Color::bisque);
-            State<50,50> s {};
+            img = rect.place(img, {40, 45}, TDT4102::Color::bisque);
+            img = circ.place(img, {20, 20}, TDT4102::Color::black);
+
             win.drawImage(img);
             win.wait_for_close();
         }

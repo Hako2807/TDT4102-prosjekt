@@ -1,23 +1,22 @@
 #include <include/solve.h>
 
-Solver::Solver(std::vector<Shape> _shapes) {
-    this->shapes = _shapes;
+Solver::Solver(std::vector<Shape> shapes) : image {100, 100} {
 }
 
-float get_score(const Shape& shape, const Point& point) {
-    
+float Solver::getScore(const Shape& shape, const Point& point) {
+    return 2;
 }
 
 
-void Solver::try_shape_at(const Shape& shape, const Point& point) {
+void Solver::tryShapeAt(const Shape& shape, const Point& point) {
     float score = 1;
 }
 
 void Solver::step() {
-    for (int i = 0; i < shapes.size(); i++) {
+    for (int i = 0; i < _shapes.size(); i++) {
         for (int row = 0; row < 50; row++) {
             for (int col = 0; col < 50; col++) {
-
+                std::cout << "Hallo" << std::endl;
             }
         }
     }
