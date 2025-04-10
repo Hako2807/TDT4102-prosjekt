@@ -42,7 +42,7 @@ public:
             for (int j = 0; j < img_width; j++) {
                 const SDL_Color colorval = GetPixelColor(pSurface, j, i);
 
-                goal_image.setPixel(j, i, TDT4102::Color{colorval.r, colorval.b, colorval.g, colorval.a});
+                goal_image.setPixel(j, i, TDT4102::Color{colorval.r, colorval.g, colorval.b, colorval.a});
             }
         }
         
