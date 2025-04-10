@@ -3,11 +3,12 @@
 
 #include <AnimationWindow.h>
 #include <include/matrix.h>
+#include <cassert>
 
 
 class Image {
     private:
-        const int _rows, _cols;
+        int _rows, _cols;
         TDT4102::Color** pixels;
     public:
         Image(int rows, int cols);

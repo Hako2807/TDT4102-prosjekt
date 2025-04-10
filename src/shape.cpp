@@ -4,9 +4,8 @@ Shape::Shape() {
 
 }
 
-State Shape::place(State& img, const Point& topLeft, const TDT4102::Color& color) {
+void Shape::place(State& img, const Point& topLeft, const TDT4102::Color& color) {
     std::cout << "Oh no this should not be called!" << std::endl;
-    return img;
 }
 
 TDT4102::Color Shape::blend_colors(TDT4102::Color c1, TDT4102::Color c2) const {

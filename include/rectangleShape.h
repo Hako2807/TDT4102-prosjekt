@@ -9,7 +9,7 @@ class RectangleShape : public Shape {
         int _width;
         int _height;
     public:
-     virtual State place(State& img, const Point topLeft, TDT4102::Color color);
+     virtual void place(State& img, const Point topLeft, TDT4102::Color color);
     
      RectangleShape(int width, int height);
 };

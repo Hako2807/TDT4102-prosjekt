@@ -8,7 +8,7 @@ class CircleShape : public Shape {
     private:
         int _radius;
     public:
-        virtual State place(State& img, const Point center, TDT4102::Color color);
+        virtual void place(State& img, const Point center, TDT4102::Color color);
     
         CircleShape(int radius);
 };

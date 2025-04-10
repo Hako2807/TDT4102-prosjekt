@@ -12,7 +12,7 @@ struct Point {
 class Shape {
     public:
         Shape();
-        virtual State place(State& img, const Point& topLeft, const TDT4102::Color& color);
+        virtual void place(State& img, const Point& topLeft, const TDT4102::Color& color);
         TDT4102::Color blend_colors(TDT4102::Color c1, TDT4102::Color c2) const;
 };
 #endif

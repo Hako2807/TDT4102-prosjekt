@@ -2,7 +2,7 @@
 
 CircleShape::CircleShape(int radius) : _radius {radius} {}
 
-State CircleShape::place(State& img, const Point center, TDT4102::Color color) {
+void CircleShape::place(State& img, const Point center, TDT4102::Color color) {
     TDT4102::Color avg_c;
     for (int i = - _radius; i <= _radius; i++) {
         for (int j = - _radius; j <= _radius; j++) {
@@ -13,5 +13,4 @@ State CircleShape::place(State& img, const Point center, TDT4102::Color color) {
             }
         }
     }
-    return img;
 }

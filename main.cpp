@@ -67,10 +67,10 @@ int main() {
             State img {200, 200};
             RectangleShape rect {20, 20};
             CircleShape circ {25};
-            img = rect.place(img, {5, 5}, TDT4102::Color::blue);
-            img = rect.place(img, {10, 15}, TDT4102::Color::bisque);
-            img = rect.place(img, {40, 45}, TDT4102::Color::bisque);
-            img = circ.place(img, {20, 20}, TDT4102::Color::black);
+            rect.place(img, {5, 5}, TDT4102::Color::blue);
+            rect.place(img, {10, 15}, TDT4102::Color::bisque);
+            rect.place(img, {40, 45}, TDT4102::Color::bisque);
+            circ.place(img, {20, 20}, TDT4102::Color::black);
 
             win.drawImage(img);
             win.wait_for_close();

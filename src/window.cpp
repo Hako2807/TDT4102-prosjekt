@@ -1,6 +1,6 @@
 #include <include/window.h>
 
-Window::Window(int rows, int cols) :_rows {rows}, _cols{cols}, TDT4102::AnimationWindow {100, 100, _rows, _cols, "Prosjekt TDT4102"} {}
+Window::Window(int rows, int cols) :_rows {rows}, _cols{cols}, TDT4102::AnimationWindow {100, 100, rows, cols, "Prosjekt TDT4102"} {}
 
 
 void Window::drawImage(const State& state){

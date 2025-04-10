@@ -26,6 +26,7 @@ TDT4102::Color* Image::operator[](int i) const {
 }
 
 TDT4102::Color Image::getPixel(int i, int j) const {
+    assert(0 <= i && i < _rows && 0 <= j && j < _cols);
     return pixels[i][j];
 }
 
@@ -40,11 +41,11 @@ const int Image::getRows() const {
 const int Image::getCols() const {
     return _cols;
 }
-
 Image& Image::operator=(Image other) {
     std::swap(pixels, other.pixels);
     return *this;
 }
+
 
 std::ostream& operator<<(std::ostream& os, const Image& m) {
     for (int i = 0; i < m.getRows(); i++){

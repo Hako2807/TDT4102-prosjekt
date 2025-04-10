@@ -2,7 +2,7 @@
 
 RectangleShape::RectangleShape(int width, int height) : _width {width}, _height{height} {}
 
-State RectangleShape::place(State& img, const Point topLeft, TDT4102::Color color) {
+void RectangleShape::place(State& img, const Point topLeft, TDT4102::Color color) {
     TDT4102::Color avg_c;
     for (int i = topLeft.x; i < topLeft.x + _width; i++) {
         for (int j = topLeft.y; j < topLeft.y + _height; j++) {
@@ -12,6 +12,4 @@ State RectangleShape::place(State& img, const Point topLeft, TDT4102::Color colo
             }
         }
     }
-    
-    return img;
 }
