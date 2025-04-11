@@ -17,6 +17,7 @@ void RectangleShape::place(State& img, const Point& topLeft, const TDT4102::Colo
 long RectangleShape::getScoreIfPlaced(const State& img, const Point& topLeft, const TDT4102::Color& color, const State& realImage) {
     TDT4102::Color avg_c;
     long score = 0;
+    /*
     for (int i = topLeft.x; i < topLeft.x + _width; i++) {
         for (int j = topLeft.y; j < topLeft.y + _height; j++) {
             if (0 <= i && i < img.getRows() && 0 <= j && j < img.getCols()) {
@@ -25,6 +26,18 @@ long RectangleShape::getScoreIfPlaced(const State& img, const Point& topLeft, co
                 score += getColorDiff(avg_c, realImage.getPixel(i, j));
             }
         }
+    }*/
+
+   for (int i = 0; i < img.getRows(); i++) {
+        for (int j = 0; j < img.getCols(); j++) { 
+            if (topLeft.x <= i && i < topLeft.x + _width && topLeft.y <= j && j < topLeft.y + _height) {
+            avg_c = blend_colors(color, img.getPixel(i, j));
+            score += getColorDiff(avg_c, realImage.getPixel(i, j));
+            } else {
+                score += getColorDiff(img.getPixel(i, j), realImage.getPixel(i, j));
+            }
+        }
     }
+
     return score;
 }

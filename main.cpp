@@ -88,17 +88,12 @@ int main() {
             Solver solve {shapes, "assets/small.png"};
             Window win {20, 20};
 
-            for (int i = 0; i < 100; i++) {
+            for (int i = 0; i < 200; i++) {
                 solve.step();
-                win.wait_for(0.1);
                 win.next_frame();
                 win.drawImage(solve.getGenerated());
                 
             }
-            
-            
-
-
             
             win.wait_for_close();
         }
