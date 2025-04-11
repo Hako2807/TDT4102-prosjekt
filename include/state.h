@@ -6,12 +6,12 @@
 
 class State : public Image {
 private:
-    double score;
+    long score;
 public:
     State(int rows, int cols);
 
-    double getScore() const;
-    void updateScore(double x);
+    long getScore() const;
+    void updateScore(long x);
 };
 
 #endif

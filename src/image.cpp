@@ -12,6 +12,18 @@ Image::Image(int rows, int cols) : _rows {rows}, _cols {cols} {
     }
 }
 
+Image::Image(const Image& other) : _rows {other._rows}, _cols {other._cols}{
+    pixels = new TDT4102::Color*[_rows];
+    for (int i = 0; i < _rows; i++) {
+
+        pixels[i] = new TDT4102::Color[_cols];
+
+        for (int j = 0; j < _cols; j++) {
+            pixels[i][j] = other.pixels[i][j];
+        }
+    }
+}
+
 Image::~Image() {
     for (int i = 0; i < _rows; i++) {
         delete[] pixels[i];
@@ -42,7 +54,27 @@ const int Image::getCols() const {
     return _cols;
 }
 Image& Image::operator=(Image other) {
-    std::swap(pixels, other.pixels);
+    if (this == &other) return *this;
+
+    // First, free old memory
+    for (int i = 0; i < _rows; ++i) {
+        delete[] pixels[i];
+    }
+    delete[] pixels;
+
+    // Copy dimensions
+    _rows = other._rows;
+    _cols = other._cols;
+
+    // Allocate and copy pixel data
+    pixels = new TDT4102::Color*[_rows];
+    for (int i = 0; i < _rows; i++) {
+        pixels[i] = new TDT4102::Color[_cols];
+        for (int j = 0; j < _cols; j++) {
+            pixels[i][j] = other.pixels[i][j];
+        }
+    }
+
     return *this;
 }
 

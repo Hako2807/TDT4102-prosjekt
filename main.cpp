@@ -2,8 +2,13 @@
 #include <include/image_file.h>
 #include <include/getPixelsFromImageFile.h>
 #include <include/window.h>
+#include <include/solve.h>
+
 #include <include/rectangleShape.h>
 #include <include/circleShape.h>
+
+#include <memory>
+
 
 int main() {
     int valg = 0;
@@ -16,6 +21,7 @@ int main() {
         std::cout << "4) Test AnimationWindow" << std::endl;
         std::cout << "5) Test få piksler fra utenom bilde" << std::endl;
         std::cout << "6) Test shapes" << std::endl;
+        std::cout << "7) Test solver" << std::endl;
         std::cout << "----------------------------------------" << std::endl;
         std::cout << "Velg et program (0-10): ";
         std::cin >> valg;
@@ -73,11 +79,31 @@ int main() {
 
             win.drawImage(img);
             win.wait_for_close();
+        } else if (valg == 7) {
+            std::shared_ptr<Shape> shape1 = std::make_shared<RectangleShape>(5, 5);
+            // std::shared_ptr<Shape> shape2 = std::make_shared<RectangleShape>(10, 10);
+            std::vector<std::shared_ptr<Shape>> shapes;
+            shapes.push_back(std::move(shape1));
+            // shapes.push_back(std::move(shape2));
+            Solver solve {shapes, "assets/small.png"};
+            Window win {20, 20};
+
+            for (int i = 0; i < 100; i++) {
+                solve.step();
+                win.wait_for(0.1);
+                win.next_frame();
+                win.drawImage(solve.getGenerated());
+                
+            }
+            
+            
+
+
+            
+            win.wait_for_close();
         }
 
     }while (valg != 0);
     
     return 0;
 }
-
-//------------------------------------------------------------------------------

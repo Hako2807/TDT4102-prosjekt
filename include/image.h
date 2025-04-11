@@ -12,6 +12,7 @@ class Image {
         TDT4102::Color** pixels;
     public:
         Image(int rows, int cols);
+        Image(const Image& other);
         ~Image();
 
         TDT4102::Color* operator[](int i) const;
