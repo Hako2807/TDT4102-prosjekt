@@ -5,10 +5,12 @@
 #include <SDL_image.h>
 #include <include/state.h>
 
-template<int Rows, int Cols>
+
 class GetPixelsFromImageFile {
 private:
-    State goal_image;
+    SDL_Surface* pSurface;
+    int img_heigth;
+    int img_width; 
 
     SDL_Color GetPixelColor(const SDL_Surface* pSurface, const int X, const int Y)
     {
@@ -26,28 +28,28 @@ private:
         return Color;
     }
 public:
-    GetPixelsFromImageFile() : goal_image {Rows, Cols} {}
+    GetPixelsFromImageFile(const char*& path) {
+        pSurface = IMG_Load(path);
 
-    State returnState() {
-        return goal_image;
+        img_heigth = pSurface->h;
+        img_width = pSurface->w; 
     }
 
-    void getPixels(const char*& path)
+    State getPixels()
     {
-        SDL_Surface* pSurface = IMG_Load(path);
-        int img_heigth = 400;
-        int img_width = 400; 
+        std::cout << img_heigth << " " << img_width << std::endl;
+        
+        State goal_state {img_heigth, img_width};
 
         for (int i = 0; i < img_heigth; i++) {
             for (int j = 0; j < img_width; j++) {
                 const SDL_Color colorval = GetPixelColor(pSurface, j, i);
 
-                goal_image.setPixel(j, i, TDT4102::Color{colorval.r, colorval.g, colorval.b, colorval.a});
+                goal_state.setPixel(j, i, TDT4102::Color{colorval.r, colorval.g, colorval.b, colorval.a});
             }
         }
-        
+        return goal_state;
 
-        std::cout << std::endl;
     }
 
 };

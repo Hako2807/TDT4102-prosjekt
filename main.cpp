@@ -55,10 +55,9 @@ int main() {
             win.drawImage(s);
             win.wait_for_close();
         } else if (valg == 5) {
-            GetPixelsFromImageFile<400, 400> handle;
             const char* path = "assets/Bart-iver.png";
-            handle.getPixels(path);
-            State state = handle.returnState();
+            GetPixelsFromImageFile handle {path};
+            State state = handle.getPixels();
             Window win {400, 400};
             win.drawImage(state);
             win.wait_for_close();
