@@ -9,8 +9,13 @@ void ImageFile::write(const Image& img) const {
     TDT4102::Color c;
     for (int i = 0; i < 50; i++) {
         for (int j = 0; j < 50; j++) {
-            c = img.getPixel(i, j);
-            fileStream << c.redChannel << " " << c.greenChannel << " " << c.blueChannel << " " << c.alphaChannel << std::endl;
+            try {
+                c = img.getPixel(i, j);
+                fileStream << c.redChannel << " " << c.greenChannel << " " << c.blueChannel << " " << c.alphaChannel << std::endl;
+            }
+            catch (std::exception& e) {
+                std::cout << "Couldn't write to file: " << e.what() << std::endl;
+            }
         }
     }
     fileStream.close();
@@ -25,8 +30,13 @@ Image ImageFile::read() {
     Image img {rows, cols};
     for (int i = 0; i < rows; i ++) {
         for (int j = 0; j < cols; j ++) {
-            fileStream >> c.redChannel >> c.greenChannel >> c.blueChannel >> c.alphaChannel; 
-            img.setPixel(i, j, c);
+            try {
+                fileStream >> c.redChannel >> c.greenChannel >> c.blueChannel >> c.alphaChannel; 
+                img.setPixel(i, j, c);
+            }
+            catch (std::exception& e) {
+                std::cout << "Couldn't read from file: " << e.what() << std::endl;
+            }
         }
     }
     fileStream.close();

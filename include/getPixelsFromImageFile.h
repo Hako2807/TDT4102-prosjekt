@@ -44,18 +44,19 @@ public:
 
     State getPixels()
     {
-        std::cout << img_heigth << " " << img_width << std::endl;
-        
         State goal_state {img_width, img_heigth};
 
         for (int i = 0; i < img_width; i++) {
             for (int j = 0; j < img_heigth; j++) {
                 const SDL_Color colorval = GetPixelColor(surface, i, j);
-                std::cout << i << j << std::endl;
-                goal_state.setPixel(i, j, TDT4102::Color{colorval.r, colorval.g, colorval.b, colorval.a});
+                try{
+                    goal_state.setPixel(i, j, TDT4102::Color{colorval.r, colorval.g, colorval.b, colorval.a});
+                }
+                catch (std::exception& e) {
+                    std::cout << "Caught exception: " << e.what() << std::endl;
+                }
             }
         }
-        std::cout << "finished" << std::endl;
         return goal_state;
 
     }

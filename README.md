@@ -1,19 +1,19 @@
 # TDT4102-prosjekt
-Avsluttende prosjekt i TDT4102 Prosedyre- og objektorientert programmering Vår 2025. Prosjektet tilhører Håkon Støren og Vetle Støren.
+Avsluttende prosjekt i TDT4102 Prosedyre- og objektorientert programmering Vår 2025. Prosjektet tilhører Håkon Støren og Vetle Støren (MTFYMA).
 
 ## Hva
 Programmet skal gjenskape et bilde ved å plassere mange enkle figurer ut på skjermen.
 
 ## Struktur
--shape
+- shape
     - Den grunnleggende formen som de spesifikke formene arver fra.
-    -circleShape
+    - circleShape
         - Sirkel som arver fra shape.
-    -rectangleShape
+    - rectangleShape
         - Rektangel som arver fra shape.
--getPixelsFromImageFile
+- getPixelsFromImageFile
     - Tar inn en filsti til et bilde (.png). getPixels-funksjonen returner et state-objekt med fargeverdiene til hver pixel for bildet i den gitte filstien. Implementasjonen er gjort med inspirasjon fra https://discourse.libsdl.org/t/how-do-i-get-the-rgb-values-of-a-pixel-from-a-given-surface-and-x-and-y-coordinates-in-sdl2/26915/2. Har også getHeigth og getWidth som returnerer henholdsvis høyden og bredden på bildet.
--image_file
+- image_file
     - Lagrer pikslene fra en state som en fil.
 - matrix
     - En implementasjon av matriser.
@@ -31,8 +31,7 @@ Programmet skal gjenskape et bilde ved å plassere mange enkle figurer ut på sk
 ## Algoritmen
 Først lages et referanseobjekt med getPixelsFromImageFile. Dette er det bildet som programmet skal etterligne. 
 Deretter plasseres mange ulike shapes forskjellige steder på skjermen, og den staten med best score blir lagret og tatt vare på.
-
-Dette gjentas flere ganger med mindre og mindre shapes helt til bilde er nære nok originalen.
+Dette gjentas flere ganger med mindre og mindre shapes helt til bildet er nære nok originalen.
 
 
 ## Mulige forbedringer
@@ -40,4 +39,3 @@ Dette gjentas flere ganger med mindre og mindre shapes helt til bilde er nære n
 - Raskere algoritme
 - Bedre GUI
 - Playback av hvilke shapes som er plassert ved lagring til fil
-
