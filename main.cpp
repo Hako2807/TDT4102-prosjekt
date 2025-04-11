@@ -12,12 +12,12 @@
 
 int main() {
 
-    std::shared_ptr<Shape> shape1 = std::make_shared<RectangleShape>(20, 20);
-    std::shared_ptr<Shape> shape2 = std::make_shared<RectangleShape>(13, 13);
+    std::shared_ptr<Shape> shape1 = std::make_shared<RectangleShape>(5, 5);
+    std::shared_ptr<Shape> shape2 = std::make_shared<RectangleShape>(2, 2);
     std::vector<std::shared_ptr<Shape>> shapes;
     shapes.push_back(std::move(shape1));
     shapes.push_back(std::move(shape2));
-    Solver solve {shapes, "assets/small.png"};
+    Solver solve {shapes, "assets/medium.png"};
     Window win {solve.getInput().getRows(), solve.getInput().getCols()};
 
     for (int i = 0; i < 200; i++) {

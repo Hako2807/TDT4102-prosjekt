@@ -36,7 +36,7 @@ void Solver::step() {
 
     std::vector<TDT4102::Color> colors {TDT4102::Color::white, TDT4102::Color::black, TDT4102::Color::red, TDT4102::Color::green, TDT4102::Color::blue};
 
-    int stepSize = 10;
+    int stepSize = 2;
     for (int i = 0; i < _shapes.size(); i++) {
         for (int row = 0; row < generatedState.getRows(); row+=stepSize) {
             for (int col = 0; col < generatedState.getCols(); col+=stepSize) {

@@ -10,3 +10,5 @@ Som nevnt ble det litt dårlig tid til å gjennomføre prosjektet, slik at det e
 Men alt i alt var dette et gøy prosjekt å jobbe med og førte til mer forståelse for animationwindow, men også andre biblioteker som SDL.
 Under prosjektet har det blitt brukt KI for å finne ut hva ulike feilmeldinger betyr, men ikke for å generere ferdig kode.
 Det kan komme oppdateringer til prosjektet på github.
+
+Det er et litt lite bilde, og guien er en knapp som forsvinner når du trykker på den.
