@@ -55,10 +55,10 @@ int main() {
             win.drawImage(s);
             win.wait_for_close();
         } else if (valg == 5) {
-            const char* path = "assets/Bart-iver.png";
+            const char* path = "assets/cpp_test_image.png";
             GetPixelsFromImageFile handle {path};
             State state = handle.getPixels();
-            Window win {400, 400};
+            Window win {handle.getWidth(), handle.getHeight()};
             win.drawImage(state);
             win.wait_for_close();
         } else if (valg == 6) {
