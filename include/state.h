@@ -11,7 +11,7 @@ public:
     State(int rows, int cols);
 
     long getScore() const;
-    void updateScore(long x);
+    void setScore(long x);
 };
 
 #endif
