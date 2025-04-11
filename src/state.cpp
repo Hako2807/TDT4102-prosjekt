@@ -3,10 +3,10 @@
 State::State(int rows, int cols) : Image(rows, cols) {
 }
 
-double State::getScore() const {
+long State::getScore() const {
     return score;
 }
 
-void State::updateScore(double x) {
+void State::updateScore(long x) {
     score += x;
 }

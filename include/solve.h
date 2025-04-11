@@ -6,18 +6,20 @@
 
 class Solver {
     private:
-        std::vector<Shape> _shapes;
-        State generatedState;
+        std::vector<std::shared_ptr<Shape>> _shapes;
         State inputState;
+        State generatedState;
+        
 
     public:
-        Solver(std::vector<Shape> shapes, const char* path);
+        Solver(std::vector<std::shared_ptr<Shape>> shapes, const char* path);
         void step();
-        void tryShapeAt(const Shape& shape, const Point& point);
-        float getScore(const Shape& shape, const Point& point);
-
+        void tryShapeAt(const std::shared_ptr<Shape>& shape, const Point& point);
+        long getScore(const std::shared_ptr<Shape>& shape, const Point& point, const TDT4102::Color& c) const;
+        State getGenerated() const;
+        State getInput() const;
 };
 
-double getColorDiff(const TDT4102::Color& c1, const TDT4102::Color& c2);
+long getColorDiff(const TDT4102::Color& c1, const TDT4102::Color& c2);
 
 #endif
