@@ -14,7 +14,6 @@ private:
 
     SDL_Color GetPixelColor(const SDL_Surface* pSurface, const int X, const int Y)
     {
-        // Hippity hoppity this code is now my property https://discourse.libsdl.org/t/how-do-i-get-the-rgb-values-of-a-pixel-from-a-given-surface-and-x-and-y-coordinates-in-sdl2/26915/2  
         const Uint8 Bpp = pSurface->format->BytesPerPixel;
 
         Uint8* pPixel = (Uint8*)pSurface->pixels + Y * pSurface->pitch + X * Bpp;
