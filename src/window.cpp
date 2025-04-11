@@ -16,4 +16,12 @@ void Window::drawImage(const State& state){
 
 void Window::buttonCb() {
     startButton.setVisible(false);
+    setShouldStart();
+}
+
+bool Window::getShouldStart() const {
+    return should_start;
+}
+void Window::setShouldStart() {
+    should_start = false;
 }

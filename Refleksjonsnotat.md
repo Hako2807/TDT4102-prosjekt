@@ -8,3 +8,5 @@ Derfor ble hele strukturen endret, og det ble implementert en enklere matrix-kla
 Etter at alt var satt opp, ble algoritmen som beskrevet i readme laget, ulike shapes ble implemetert og tester ble gjennomført.
 Som nevnt ble det litt dårlig tid til å gjennomføre prosjektet, slik at det er mange forbedringer, ideer og kanskje bugs som kunne blitt gjort noe med.
 Men alt i alt var dette et gøy prosjekt å jobbe med og førte til mer forståelse for animationwindow, men også andre biblioteker som SDL.
+Under prosjektet har det blitt brukt KI for å finne ut hva ulike feilmeldinger betyr, men ikke for å generere ferdig kode.
+Det kan komme oppdateringer til prosjektet på github.

@@ -11,6 +11,7 @@ class Window : public TDT4102::AnimationWindow {
 private:
     int _rows;
     int _cols;
+    bool should_start = true;
 public:
     Window(int rows, int cols);
 
@@ -18,6 +19,10 @@ public:
 
     TDT4102::Button startButton;
     void buttonCb();
+
+    bool getShouldStart() const;
+    void setShouldStart();
+
 };
 
 #endif

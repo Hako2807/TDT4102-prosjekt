@@ -5,10 +5,10 @@ ImageFile::ImageFile(const std::string fileName) : fileName {fileName} {
 
 void ImageFile::write(const Image& img) const {
     std::ofstream fileStream  {fileName};
-    fileStream << 50 << " " << 50 << std::endl;
+    fileStream << img.getRows() << " " << img.getCols() << std::endl;
     TDT4102::Color c;
-    for (int i = 0; i < 50; i++) {
-        for (int j = 0; j < 50; j++) {
+    for (int i = 0; i < img.getRows(); i++) {
+        for (int j = 0; j < img.getCols(); j++) {
             try {
                 c = img.getPixel(i, j);
                 fileStream << c.redChannel << " " << c.greenChannel << " " << c.blueChannel << " " << c.alphaChannel << std::endl;
