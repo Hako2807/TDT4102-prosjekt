@@ -1,6 +1,9 @@
 #include <include/window.h>
 
-Window::Window(int rows, int cols) :_rows {rows}, _cols{cols}, TDT4102::AnimationWindow {100, 100, rows, cols, "Prosjekt TDT4102"} {}
+Window::Window(int rows, int cols) :_rows {rows}, _cols{cols}, TDT4102::AnimationWindow {100, 100, rows, cols, "Prosjekt TDT4102"}, startButton(TDT4102::Point{10,10}, 200, 50, "Start") {
+    add(startButton);
+    startButton.setCallback(std::bind(&Window::buttonCb,this));
+}
 
 
 void Window::drawImage(const State& state){
@@ -9,4 +12,8 @@ void Window::drawImage(const State& state){
             this->draw_rectangle({i,j}, 1, 1, state.getPixel(i, j));
         }
     }
+}
+
+void Window::buttonCb() {
+    startButton.setVisible(false);
 }
