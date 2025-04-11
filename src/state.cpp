@@ -1,6 +1,6 @@
 #include <include/state.h>
 
-State::State(const int rows, const int cols) : Image(rows, cols) {
+State::State(int rows, int cols) : Image(rows, cols) {
 }
 
 double State::getScore() const {

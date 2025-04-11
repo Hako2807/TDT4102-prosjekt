@@ -14,3 +14,4 @@ void CircleShape::place(State& img, const Point center, TDT4102::Color color) {
         }
     }
 }
+

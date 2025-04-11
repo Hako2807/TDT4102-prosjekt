@@ -8,6 +8,10 @@ void Shape::place(State& img, const Point& topLeft, const TDT4102::Color& color)
     std::cout << "Oh no this should not be called!" << std::endl;
 }
 
+double Shape::getScoreIfPlaced(const State& img, const Point& topLeft, const TDT4102::Color& color, const State& realImage) {
+    return 0;
+}
+
 TDT4102::Color Shape::blend_colors(TDT4102::Color c1, TDT4102::Color c2) const {
     TDT4102::Color avg_c;
     avg_c.redChannel = (c1.redChannel + c2.redChannel) / 2;
