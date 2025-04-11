@@ -6,7 +6,7 @@
 
 class State : public Image {
 private:
-    long score;
+    long _score;
 public:
     State(int rows, int cols);
 

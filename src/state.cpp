@@ -1,12 +1,12 @@
 #include <include/state.h>
 
-State::State(int rows, int cols) : Image(rows, cols) {
+State::State(int rows, int cols) : Image(rows, cols), _score {0} {
 }
 
 long State::getScore() const {
-    return score;
+    return _score;
 }
 
 void State::updateScore(long x) {
-    score += x;
+    _score += x;
 }

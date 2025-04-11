@@ -45,6 +45,7 @@ void Solver::step() {
     }
 
     best_shape->place(generatedState, best_point, best_color);
+    generatedState.updateScore(best_score);
 }
 
 State Solver::getGenerated() const {

@@ -56,17 +56,14 @@ const int Image::getCols() const {
 Image& Image::operator=(Image other) {
     if (this == &other) return *this;
 
-    // First, free old memory
     for (int i = 0; i < _rows; ++i) {
         delete[] pixels[i];
     }
     delete[] pixels;
 
-    // Copy dimensions
     _rows = other._rows;
     _cols = other._cols;
 
-    // Allocate and copy pixel data
     pixels = new TDT4102::Color*[_rows];
     for (int i = 0; i < _rows; i++) {
         pixels[i] = new TDT4102::Color[_cols];

@@ -1,5 +1,6 @@
 # Prosjekt i TDT4102 vår 2025
 Contibuters: Håkon og Vetle Støren
+DENNE FILEN ER BRUKT TIL Å IDEER. SE README FOR DOKUMENTASJON PÅ NÅVÆRENDE KODE.
 
 ## Idé
 Vi tenker å lage et program som kan ta inn et bilde, og deretter starte fra et blankt ark og bygge opp bildet av ulike former med forskjellige farger, ved å prøve å plassere en og en form, og så velge den formen som gjør at bildet blir nærmere det originale. Vi tenker å gjøre dette ved hjelp av AnimationWindow. 
