@@ -1,3 +1,4 @@
+
 project('GUI Project', 'cpp',
   version : '0.1',
   default_options : ['warning_level=2',
@@ -26,6 +27,7 @@ endif
 
 exe = executable(
   'program',
+'main.cpp', 'src/circleShape.cpp', 'src/image_file.cpp', 'src/image.cpp', 'src/rectangleShape.cpp', 'src/shape.cpp', 'src/solve.cpp', 'src/state.cpp', 'src/window.cpp',
   dependencies : [animationwindow_dep, sdl2_dep, std_lib_facilities_dep],
   cpp_args : compiler_flags
 )

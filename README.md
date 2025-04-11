@@ -14,7 +14,7 @@ Programmet skal gjenskape et bilde ved å plassere mange enkle figurer ut på sk
 - getPixelsFromImageFile
     - Tar inn en filsti til et bilde (.png). getPixels-funksjonen returner et state-objekt med fargeverdiene til hver pixel for bildet i den gitte filstien. Implementasjonen er gjort med inspirasjon fra https://discourse.libsdl.org/t/how-do-i-get-the-rgb-values-of-a-pixel-from-a-given-surface-and-x-and-y-coordinates-in-sdl2/26915/2. Har også getHeigth og getWidth som returnerer henholdsvis høyden og bredden på bildet.
 - image_file
-    - Lagrer pikslene fra en state som en fil.
+    - Lagrer pikslene fra en state som en fil. Hvert image blir lagret til fil.
 - matrix
     - En implementasjon av matriser.
 - image
